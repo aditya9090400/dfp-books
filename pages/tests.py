@@ -33,7 +33,7 @@ class HomepageTests(SimpleTestCase):
         )
 
 
-class AboutPageTests(SimpleTestCase): # new
+class AboutPageTests(SimpleTestCase):
     def setUp(self):
         url = reverse('about')
         self.response = self.client.get(url)
