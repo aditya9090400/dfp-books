@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'debug_toolbar',
+    'whitenoise.runserver_nostatic',
 
     # Local
     'accounts',
@@ -72,6 +73,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -177,6 +179,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
